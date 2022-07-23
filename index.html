@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Tasa de Usura CCH</title>
+<link rel="shortcut icon" href="">
+<style type = "text/css">
+  #derechos{
+    
+      color: #F6F5F5;
+      font-family:'Times New Roman', Times, serif;
+      font-size: 16.5px;
+      margin:auto;
+          text-align:center;
+  }
+  #textoInicial{
+    margin:auto;
+          text-align:center;
+  }
+  #tabla_Inputs{
+    margin:auto;
+          text-align:center;
+  }
+  #historicoTasas{
+    margin:auto;
+          text-align:center;
+  }
+  #boton{
+    margin:auto;
+          text-align:center;
+  }
+  #resultado{
+    margin:auto;
+          text-align:center;
+  }
+  #resultadoMora{
+    margin:auto;
+          text-align:center;
+  }
+    h2{
+        margin:auto;
+          text-align:center;
+    }
+    h3{
+        margin:auto;
+          text-align:center;
+    }
+    body
+    {
+      background-color:#fcfcfc;
+      color: #000000;
+      font-family: arial;
+      font-size: 19px;
+    }
+    td{
+        margin:auto;
+          text-align:center;
+    }
+    th{
+        margin:auto;
+          text-align:center;
+    }
+    #fechaUno {
+      font-size: 20px;
+    }
+    #fechaDos {
+      font-size: 20px;
+    }
+    #valorLiquidacion {
+      font-size: 20px;
+    }
+    #diasMora {
+      font-size: 20px;
+      background-color:#F6F5F5;
+    }
+    #valorResultado {
+      font-size: 20px;
+      background-color:#F6F5F5;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="app">  
+    <h2 style="color: #E74247;">Liquidar Intereses de Mora</h2>
+    <br>
+    <p id="textoInicial">{{textoI}}</p>
+    <br>
+    <table id="tabla_Inputs">
+        <thead>
+          <tr>
+            <th>Fecha Inicial:</th>
+            <th>Fecha Final:</th>
+            <th>Impuesto de registro: </th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>
+              <input type="date" id="fechaUno"></input>
+            </th>
+            <th>
+              <input type="date" id="fechaDos"></input>
+            </th>
+            <th>
+              <input type="text" id="valorLiquidacion" style="width:180px; height:25px;"></input>
+            </th>
+            <th>
+              <input style="height: 40px;width: 100px;" type="button" id="boton" value="LIQUIDAR"v-on:click="liquidacion"></input>
+            </th>       
+          </tr>
+          <tr>  
+            <th colspan="2">
+              <br>
+              <p id="resultado">
+                    El valor de los Intereses de Mora es de: $<input type="text" style="width:180px ; height:25px" id="valorResultado"></input>
+              </p>
+            </th>
+            <th>
+                <br>
+                <p id="resultadoMora">
+                    Total días en Mora:<input type="text" style="width:80px ; height:25px" id="diasMora"></input>
+                </p>
+            </th>
+          </tr>
+        </thead>
+      </table>
+       <br>
+
+<h3>Histórico Tasa de Usura en Colombia</h3>
+<table id="historicoTasas" style="border-: 2px solid #1E1E2A;" border="1">
+<thead>
+<tr>
+<th>Fecha Inicial</th>
+<th>Fecha Final</th>
+<th>Tasa Anual(%)</th>
+<th>Tasa Anual Ajustada(%)</th>
+<th>Tasa Diaria(%)</th>
+</tr>
+</thead>
+<tbody id="historico">
+<tr v-for="lista in listaDatos">
+<td>{{lista[0]}}</td>
+<td>{{lista[1]}}</td>
+<td>{{lista[2]}}</td>
+<td>{{lista[3]}}</td>
+<td>{{lista[4]}}</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="archivo.js"></script>
+</body>
+</html>
