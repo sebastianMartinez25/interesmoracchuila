@@ -74,7 +74,16 @@ for(var l=0;l<=ultimaFile-1;l++)
 tasaEncontrada=tasaEncontrada.replace(",",".");
 var tasaDay=(parseFloat(tasaEncontrada)/365)/100;
 var valorFinal=(liquidar*tasaDay*diasM).toFixed(0);
+
+///NEW COMMIT 6/3/2023 -- VERSION 0.2
+if (valorFinal<=50 && valorFinal>0)
+{
+  valorFinal=100;
+}
+else{
 valorFinal=Math.round(valorFinal/100)*100;
+}
+//FIN DEL NEW COMMIT -- VERSION 0.2
 
 //var mensajeFinal=document.createTextNode("El valor de los Intereses de Mora es de: " + valorFinal + ", para un total de " + diasM + " días en Mora.");
   
