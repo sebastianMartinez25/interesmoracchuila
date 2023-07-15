@@ -28,7 +28,7 @@ var fechaUno=new Date(document.getElementById("fechaUno").value);
 var fechaDos=new Date(document.getElementById("fechaDos").value);
 
 var milisegundos=1000*60*60*24;
-var resultado=document.getElementById("valorResultado");
+var resultado=document.getElementById("resultado");
 var diasMora=document.getElementById("diasMora");
 valorLiquidacion=document.getElementById("valorLiquidacion");
 var liquidar=(valorLiquidacion.value);
@@ -73,15 +73,15 @@ for(var l=0;l<=ultimaFile-1;l++)
 }
 tasaEncontrada=tasaEncontrada.replace(",",".");
 var tasaDay=(parseFloat(tasaEncontrada)/365)/100;
-var valorFinal=(liquidar*tasaDay*diasM).toFixed(0);
-
+var valorFinal=(liquidar*tasaDay*diasM);
+console.log(valorFinal);
 ///NEW COMMIT 6/3/2023 -- VERSION 0.2
 if (valorFinal<=50 && valorFinal>0)
 {
   valorFinal=100;
 }
 else{
-valorFinal=Math.round(valorFinal/100)*100;
+valorFinal=Math.round(valorFinal.toFixed(0)/100)*100;
 }
 //FIN DEL NEW COMMIT -- VERSION 0.2
 
@@ -90,9 +90,9 @@ valorFinal=Math.round(valorFinal/100)*100;
   //resultado.appendChild(mensajeFinal);
   var valorem=new Intl.NumberFormat('en-EN').format(valorFinal);
   valorem=valorem.replace(/,/g,".");
-  
-  resultado.value=valorem;
-  diasMora.value=diasM;
+
+  resultado.textContent="$"+ valorem;
+  diasMora.textContent=diasM;
 }
 else
 {
@@ -100,8 +100,8 @@ else
     document.getElementById("fechaUno").value="";
     document.getElementById("fechaDos").value="";
     valorLiquidacion.value="";
-    resultado.value="";
-    diasMora.value="";
+    resultado.textContent="*$";
+    diasMora.textContent="*#";
 }
     },
 getLista(){
@@ -118,10 +118,10 @@ getLista(){
     return lista.json()
     
 }).then((valores)=>{
-this.listaDatos = valores.values
+this.listaDatos = valores.values.reverse();
 //PRUEBITAS
 var numeroFilas=(this.listaDatos.length);
-var valorTasaAjustada=(this.listaDatos[numeroFilas-1][3]);
+var valorTasaAjustada=(this.listaDatos[0][3]);
 valorTasaAjustada=valorTasaAjustada.replace(",",".");
 var valorTasaDiaria=(parseFloat(valorTasaAjustada)/365);
 

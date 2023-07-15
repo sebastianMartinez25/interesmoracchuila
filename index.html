@@ -5,144 +5,270 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Tasa de Usura CCH</title>
-<link rel="shortcut icon" href="./logoNuevoCch.png">
+<link rel="shortcut icon" href="./new-logo-cch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <style type = "text/css">
-  #derechos{
+  :root{
+    --rojo-claro:#cc3333;
+    --rojo--oscuro:#AF1917;
+    --negro:black;
+    --gris-oscuro:#C7C7C7;
+    --gris-claro:#F7F7F7;
+    --blanco:white;
+    --sm:14px;
+    --md:18px;
+    --lg:24px;
+  }
+  body{
+    margin:0;
+    font-family: 'Vesper Libre', serif;
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 24px;
+    border-bottom: 1px solid var(--gris-oscuro);
+    background-color: var(--gris-claro);
+  }
+  .navbar-left{
+    display: flex;
+  }
+  .navbar-left ul, .navbar-right p{
+    list-style: none;
+    padding: 0;
+    margin:0 0 0 12px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+  .navbar-left ul li a{
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid var(--gris-oscuro);
+    padding: 4px;
+    border-radius: 8px;
+    font-size: var(--sm);
+  }
+.navbar-left ul li a:hover{
+  border: 2px solid var(--rojo-claro);
+  font-weight: bold;
+}
+.navbar-right p{
+  color: var(--black);
+  padding: 4px;
+  font-size: var(--sm);
+}
+  .app{
+      width: 100%; 
+      display: grid;
+      place-items: center center; 
+    }
+  .form-container{
+    width: 400px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .logo{
+    width: 100px;
+  }
+  .title{
+    text-align: center;
+    margin: 8px 0 0 0;
+    font-size: var(--lg);
+    color: var(--rojo--oscuro);
+
+    white-space: nowrap;
+    border-right: 4px solid var(--black);
+    width: 26ch;
+    animation: typing 3s steps(26) 2,
+    blink .5s infinite step-end alternate;
+    overflow: hidden;
+  }
+
+  @keyframes typing {
+    from {width: 0}
+  }
+  @keyframes blink {
+  50% {border-color: transparent}
+}
+
+  .subtitle{
+    text-align: center;
+    margin: 0;
+    font-size: var(--md);
+    color: var(--negro);
+  }
+
+  .form{
+    width: 600px;
+    height: 300px;
+    background-color: var(--negro);
+    border-radius: 8px;
+    border: 3px solid var(--gris-oscuro);
+    display: flex;
+    justify-content: space-between;
     
-      color: #F6F5F5;
-      font-family:'Times New Roman', Times, serif;
-      font-size: 16.5px;
+  }
+  .form:hover{
+    border: 3px solid var(--rojo-claro);
+  }
+  .form-left{
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    
+  }
+  .label{
+    font-size: var(--md);
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: var(--gris-claro);
+  }
+  .input{
+    font-size: var(--md);
+    background-color:var(--gris-oscuro);
+    border-radius: 8px;
+    border: 1px solid var(--gris-claro);
+    height: 24px;
+    padding: 4px;
+    margin-bottom: 8px;
+  }
+  .primary-button{
+    background-color: var(--rojo-claro);
+    border-radius: 8px;
+    color: var(--gris-claro);
+    height: 32px;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    margin-top: 12px;
+    border: none;
+  }
+  .primary-button:hover{
+    border: 2px solid var(--gris-claro);
+    background-color: var(--rojo--oscuro);
+  }
+  .form-right{
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    justify-content: space-evenly;
+  }
+  .form-right p{
+    color: var(--gris-claro);
+    font-size: var(--md);
+    margin:0; 
+  }
+  .form-right p:nth-child(2n+1)
+  {
+    font-weight: bold;
+    font-size: var(--lg);
+  }
+  .subtitle-second{
+    color: var(--rojo--oscuro);
+    font-size: var(--md);
+    margin-bottom: 2px;
+  }
+    .table-rate{
+      text-align: center;
+     border-collapse: collapse;
+    }
+    .table-title tr{
+      position: sticky;
+      top: 0;
+      background-color: var(--rojo-claro);
+      font-weight: bold;
+      color: var(--negro);
+    }
+    
+    .table-rate th, td{
+      font-size: var(--sm);
+      padding: 6px;
+      border: 2px solid var(--gris-oscuro);
+    }
+    .table-rate tr:nth-child(even){
+      background-color: var(--gris-claro);
+    }
+    .table-rate td:hover{
+      background-color: var(--gris-oscuro);
+      border: 3px solid var(--rojo--oscuro);
+      font-weight: bold;
+    }
+
+    .copyright{
       margin:auto;
           text-align:center;
-  }
-  #textoInicial{
-    margin:auto;
-          text-align:center;
-  }
-  #tabla_Inputs{
-    margin:auto;
-          text-align:center;
-  }
-  #historicoTasas{
-    margin:auto;
-          text-align:center;
-  }
-  #boton{
-    margin:auto;
-          text-align:center;
-  }
-  #resultado{
-    margin:auto;
-          text-align:center;
-  }
-  #resultadoMora{
-    margin:auto;
-          text-align:center;
-  }
-    h2{
-        margin:auto;
-          text-align:center;
-    }
-    h3{
-        margin:auto;
-          text-align:center;
-    }
-    body
-    {
-      background-color:#fcfcfc;
-      color: #000000;
-      font-family: arial;
-      font-size: 19px;
-    }
-    td{
-        margin:auto;
-          text-align:center;
-    }
-    th{
-        margin:auto;
-          text-align:center;
-    }
-    #fechaUno {
-      font-size: 20px;
-    }
-    #fechaDos {
-      font-size: 20px;
-    }
-    #valorLiquidacion {
-      font-size: 20px;
-    }
-    #diasMora {
-      font-size: 20px;
-      background-color:#F6F5F5;
-    }
-    #valorResultado {
-      font-size: 20px;
-      background-color:#F6F5F5;
-    }
-    #copyright{
-      margin:auto;
-          text-align:center;
-          color:#E74247;
-    }
-    #logocch{
-      width: 10%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+          color:var(--rojo-claro);
+          font-size: var(--sm);
+          font-weight: bold;
     }
   </style>
 </head>
 <body>
-  
-  <div id="app"> 
-    <img id="logocch" src="./logoNuevoCch.png">
-    <h2 style="color: #E74247;">Liquidar Intereses de Mora</h2>
-    <br>
-    <p id="textoInicial">{{textoI}}</p>
-    <br>
-    <table id="tabla_Inputs">
-        <thead>
-          <tr>
-            <th>Fecha Inicial:</th>
-            <th>Fecha Final:</th>
-            <th>Impuesto de registro: </th>
-            <th></th>
-          </tr>
-          <tr>
-            <th>
-              <input type="date" id="fechaUno"></input>
-            </th>
-            <th>
-              <input type="date" id="fechaDos"></input>
-            </th>
-            <th>
-              <input type="text" id="valorLiquidacion" style="width:180px; height:25px;"></input>
-            </th>
-            <th>
-              <input style="height: 40px;width: 100px;" type="button" id="boton" value="LIQUIDAR"v-on:click="liquidacion"></input>
-            </th>       
-          </tr>
-          <tr>  
-            <th colspan="2">
-              <br>
-              <p id="resultado">
-                    El valor de los Intereses de Mora es de: $<input type="text" style="width:180px ; height:25px" id="valorResultado"></input>
+  <nav>
+    <div class="navbar-left">
+      <a href="https://www.cchuila.org/tablero-de-aplicaciones-general/">
+        <img class="logo" src="./new-logo-cch.png" alt="logo-camara-de-comercio-del-huila">
+      </a>
+      <ul>
+        <li>
+          <a href="https://sebastianmartinez25.github.io/interesmoracchuila/index.html">Intereses de mora</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <p>Soporte: juanmartinez@cchuila.org</p>
+    </div>
+  </nav>
+  <div id="app" class="app"> 
+    <div class="form-container">
+    <h1 class="title">Liquidar Intereses de Mora</h1>
+    <p id="textoInicial" class="subtitle">{{textoI}}</p>
+    </div>
+    
+    <div class="form">
+    <form id="tabla_Inputs" class="form-left">
+        <label for="fechaUno" class="label">
+          Fecha inicial
+        </label>
+        <input type="date" id="fechaUno" class="input input-fecha-inicial">
+        <label for="fechaDos" class="label">
+          Fecha final
+        </label>
+        <input type="date" id="fechaDos" class="input input-fecha-final">  
+        <label for="valorLiquidacion" class="label">
+          Impuesto de registro
+        </label> 
+        <input type="text" id="valorLiquidacion" class="input input-impuesto-registro"> 
+            
+              <input type="button" id="boton" class="primary-button" value="Liquidar"v-on:click="liquidacion">
+            </input>
+          </form>
+          <div class="form-right">
+            <div class="form-right-up">
+              <p id="resultado">*$</p>
+              <p id="valorResultado">
+                De intereses de mora
               </p>
-            </th>
-            <th>
-                <br>
+            </div>
+            <div class="form-right-bottom">
+              <p id="diasMora">*#</p>
                 <p id="resultadoMora">
-                    Total días en Mora:<input type="text" style="width:80px ; height:25px" id="diasMora"></input>
+                    Días en mora
                 </p>
-            </th>
-          </tr>
-        </thead>
-      </table>
-       <br>
+            </div>
+              
+              
+                
+            </div>
+              
+            </div>
 
-<h3>Histórico Tasa de Usura en Colombia</h3>
-<table id="historicoTasas" style="border-: 2px solid #1E1E2A;" border="1">
-<thead>
+<h2 class="subtitle-second">Histórico Tasa de Usura en Colombia</h2>
+<table id="historicoTasas" class="table-rate">
+<thead class="table-title">
 <tr>
 <th>Fecha Inicial</th>
 <th>Fecha Final</th>
@@ -168,6 +294,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="archivo.js"></script>
-<footer id="copyright">Desarrollado por Juan Sebastián Martínez Losada | version 0.3-06032023</footer>
+<footer class="copyright">Desarrollado por Juan Sebastián Martínez Losada | version 0.4-17072023</footer>
 </body>
 </html>
