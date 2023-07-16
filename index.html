@@ -161,11 +161,40 @@
     font-size: var(--md);
     margin:0; 
   }
-  .form-right p:nth-child(2n+1)
+  .form-right #resultado, #diasMora
   {
     font-weight: bold;
     font-size: var(--lg);
   }
+  .card-alert .message-alert{
+    font-size:  var(--sm);
+    color:var(--gris-claro);
+    line-height:1.15;
+    opacity: 0;
+    border:2px solid var(--gris-claro);
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 8px;
+  }
+  .card-alert .icon-alert{
+    border-radius: 50%;
+    border: 2px solid var(--gris-claro);
+    width: 18px;
+    height:18px;
+    font-size: var(--md);
+    font-weight:bold;
+    text-align: end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+   .card-alert .icon-alert:hover{
+    color:var(--rojo--oscuro);
+     border: 2px solid var(--rojo--oscuro);
+   }
+   
+
   .subtitle-second{
     color: var(--rojo--oscuro);
     font-size: var(--md);
@@ -248,6 +277,10 @@
           </form>
           <div class="form-right">
             <div class="form-right-up">
+              <div class="card-alert">
+                <p class="message-alert">"La tasa de usura se actualiza automáticamente el primer día(1) de cada mes entre las 05:00 y 06:00 a.m. GMT-5. Por lo tanto, no use este sitio web en el horario mencionado."</p>
+                <p class="icon-alert">¡</p>
+              </div>
               <p id="resultado">*$</p>
               <p id="valorResultado">
                 De intereses de mora
@@ -294,6 +327,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="archivo.js"></script>
-<footer class="copyright">Desarrollado por Juan Sebastián Martínez Losada | version 0.4-17072023</footer>
+<footer class="copyright">Desarrollado por Juan Sebastián Martínez Losada | version 0.5-17072023</footer>
 </body>
 </html>

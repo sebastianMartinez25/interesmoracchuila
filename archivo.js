@@ -26,7 +26,7 @@ var tasaDiaria=(parseFloat(tasaAjustada)/365)/100;
 
 var fechaUno=new Date(document.getElementById("fechaUno").value);
 var fechaDos=new Date(document.getElementById("fechaDos").value);
-
+var fechaHoy= new Date;
 var milisegundos=1000*60*60*24;
 var resultado=document.getElementById("resultado");
 var diasMora=document.getElementById("diasMora");
@@ -49,7 +49,7 @@ const anoBuscar=fechaBuscar.substring(0,partOneMes);
 if(fechaUno.getTime()<=fechaDos.getTime() && regex.test(liquidar) && parseInt(anoBuscar)>=2018)
 {
     var diasM=(((fechaDos.getTime())-(fechaUno.getTime()))/milisegundos)+1;
-//console.log(liquidar);
+
 var fechaRecorrido;
 var mesOneRecorrido;
 var mesEndRecorrido;
@@ -74,7 +74,7 @@ for(var l=0;l<=ultimaFile-1;l++)
 tasaEncontrada=tasaEncontrada.replace(",",".");
 var tasaDay=(parseFloat(tasaEncontrada)/365)/100;
 var valorFinal=(liquidar*tasaDay*diasM);
-console.log(valorFinal);
+//console.log(valorFinal);
 ///NEW COMMIT 6/3/2023 -- VERSION 0.2
 if (valorFinal<=50 && valorFinal>0)
 {
@@ -211,3 +211,15 @@ function validarUp(e)
         alert("Esta prohibida la acción escribir.");
       }
 }
+
+/////////////////////////////////////////17.07.2023
+//hover icon-alert
+const messageAlert=document.querySelector(".message-alert");
+const iconAlert=document.querySelector(".icon-alert");
+
+iconAlert.addEventListener('mouseover',() => {
+  messageAlert.style.opacity='1';
+});
+iconAlert.addEventListener('mouseout',() => {
+  messageAlert.style.opacity='0';
+});
