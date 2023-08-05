@@ -223,3 +223,21 @@ iconAlert.addEventListener('mouseover',() => {
 iconAlert.addEventListener('mouseout',() => {
   messageAlert.style.opacity='0';
 });
+
+//mobile-menu
+const iconmenu=document.querySelector(".menu");
+const displaymenu=document.querySelector(".mobile-menu");
+let activationmenu=0;
+iconmenu.addEventListener('click', () =>{
+  
+  if (activationmenu>0)
+  {
+    activationmenu=0;
+    displaymenu.style.display='none';
+  }
+  else
+  {
+    activationmenu=1;
+    displaymenu.style.display='inline-block';
+  }
+});
